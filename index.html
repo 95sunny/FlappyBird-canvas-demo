@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlappyBird</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #canvas{
+            display: block;
+            margin: 0 auto;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="900" height="600" style="border: 1px solid #000;"></canvas>
+<script src="js/simple-inheritence.js"></script>
+<script src="js/underscore-min.js"></script>
+<script src="js/Game.js"></script>
+<script src="js/FpsUtil.js"></script>
+<script src="js/AjaxUtil.js"></script>
+<script src="js/Background.js"></script>
+<script src="js/Pipe.js"></script>
+<script src="js/Bird.js"></script>
+<script>
+    //实例化游戏对象
+    var game = new Game({
+        canvasId: 'canvas',
+        //传入-1表示当前设备和环境所能达到的最大fps，一般不用
+        fps: 60
+    });
+    // 全屏
+    game.canvas.width = window.innerWidth;
+    game.canvas.height = window.innerHeight;
+</script>
+</body>
+</html>
