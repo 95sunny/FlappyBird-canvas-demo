@@ -95,12 +95,32 @@
         // 事件
         bindClick: function () {
             var that = this;
-            game.canvas.onmousedown = function () {
-                that.state = 1;
-                // 上升的高度
-                that.rotateAngle = -25;
-                // 复位空气阻力
-                that.deleteY = 1;
+            if( navigator.userAgent.match(/Android/i)
+                || navigator.userAgent.match(/webOS/i)
+                || navigator.userAgent.match(/iPhone/i)
+                || navigator.userAgent.match(/iPad/i)
+                || navigator.userAgent.match(/iPod/i)
+                || navigator.userAgent.match(/BlackBerry/i)
+                || navigator.userAgent.match(/Windows Phone/i)
+            ){
+                game.canvas.addEventListener('touchstart',function () {
+                    that.state = 1;
+                    // 上升的高度
+                    that.rotateAngle = -25;
+                    // 复位空气阻力
+                    that.deleteY = 1;
+                });
+                console.log(123);
+            }else{
+                game.canvas.addEventListener('mousedown',function (e) {
+                    e.preventDefault();
+                    that.state = 1;
+                    // 上升的高度
+                    that.rotateAngle = -25;
+                    // 复位空气阻力
+                    that.deleteY = 1;
+                });
+                console.log(456);
             }
         }
     })
