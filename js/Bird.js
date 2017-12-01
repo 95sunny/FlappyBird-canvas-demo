@@ -110,7 +110,7 @@
                     // 复位空气阻力
                     that.deleteY = 1;
                 });
-                console.log(123);
+                // console.log(123);
             }else{
                 game.canvas.addEventListener('mousedown',function (e) {
                     e.preventDefault();
@@ -120,7 +120,7 @@
                     // 复位空气阻力
                     that.deleteY = 1;
                 });
-                console.log(456);
+                // console.log(456);
             }
         }
     })
